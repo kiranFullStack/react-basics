@@ -1,21 +1,34 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
-import Component22 from './Component22'
+import React, { useState } from 'react'
 
 export default function App() {
+  const [data, setdata] = useState('Kiran....')
+  const [age, setage] = useState(30)
+  const [profession, setprofession] = useState('Developer')
+
   return (
     <div>
-      <Header
-        name={'Elon Musk...'}
-        age={42}
-        ceoBoolean={false}
-        array={[1, 2, 3, 4]}
-      />
-      <h1>App</h1>
-      <Component22 />
+      <h1>App,{data}</h1>
+      <h1>age={age}</h1>
 
-      <Footer somepropdata={'My data'} />
+      <button
+        onClick={() => {
+          setprofession('Teacher')
+        }}>
+        content of button
+      </button>
+
+      <button
+        onClick={() => {
+          setage(age + 10)
+        }}>
+        age btn
+      </button>
+      <button
+        onClick={() => {
+          setdata('Something else......')
+        }}>
+        click
+      </button>
     </div>
   )
 }
